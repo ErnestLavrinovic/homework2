@@ -129,7 +129,7 @@ export const recipes: Recipe[] = [
         ],
         course: 'lunch',
         categories: ['lunch'],
-        image: require('../../assets/images/vistienaGrietinesPadaze.jpg'),
+        image: require('../../assets/images/vistienaGrietinesPadaze.png'),
         source: 'https://tavovaikas.lt/receptai/vistiena-grietineles-padaze-kremiskas-patiekalas-visai-seimai'
     },
     {

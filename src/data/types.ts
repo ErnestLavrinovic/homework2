@@ -19,3 +19,8 @@ export interface Recipe {
     image: ImageSourcePropType;
     source: string;
 }
+
+export type RootStackParamList = {
+  Categories: undefined;
+  Recipes: { course: MealCourse | 'all' };
+};
