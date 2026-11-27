@@ -1,14 +1,15 @@
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, Pressable } from 'react-native';
 import { style } from '../app/styles';
 import type { Recipe } from '../data/types';
 
 interface Props {
     recipe: Recipe;
+    onPress?: () => void;
 }
 
-export default function RecipeCard({ recipe }: Props) {
+export default function RecipeCard({ recipe, onPress }: Props) {
     return (
-        <View style={style.recipeCard}>
+        <Pressable onPress={onPress} style={style.recipeCard}>
             <Image source={recipe.image} style={style.recipeImage} />
             <View style={style.recipeContent}>
                 <Text style={style.recipeTitle}>{recipe.name}</Text>
@@ -16,6 +17,6 @@ export default function RecipeCard({ recipe }: Props) {
                     {recipe.description}
                 </Text>
             </View>
-        </View>
+        </Pressable>
     );
 }

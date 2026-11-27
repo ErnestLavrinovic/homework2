@@ -23,4 +23,12 @@ export interface Recipe {
 export type RootStackParamList = {
   Categories: undefined;
   Recipes: { course: MealCourse | 'all' };
+  RecipeDetails: { recipeId: number };
 };
+
+export interface RecipeNote {
+    id: string;
+    recipeId: number;
+    text: string;
+}
+

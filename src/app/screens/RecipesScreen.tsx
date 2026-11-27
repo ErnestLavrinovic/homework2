@@ -8,7 +8,7 @@ import RecipeCard from '../../components/RecipeCard';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Recipes'>;
 
-export default function Recipes({ route }: Props) {
+export default function Recipes({ route, navigation }: Props) {
     const { course } = route.params;
 
     const filteredRecipes =
@@ -21,7 +21,10 @@ export default function Recipes({ route }: Props) {
                 data={filteredRecipes}
                 keyExtractor={item => item.id.toString()}
                 renderItem={({ item }) => (
-                    <RecipeCard recipe={item} />
+                    <RecipeCard recipe={item} 
+                    onPress={() =>
+                        navigation.navigate('RecipeDetails', { recipeId: item.id })
+                    }/>
                 )}
             />
         </View>
